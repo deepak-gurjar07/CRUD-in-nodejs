@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User|New</title>
+    <link rel="stylesheet" href="css/new.css">
+    <style>
+        body{
+            background-color: steelblue;
+        }
+        h2{
+            text-align: center;
+            margin-top: 80px;
+        }
+        form{
+            position: relative;
+            top: 20px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        input{
+            margin: 5px;
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        button{
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: slateblue;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit the details for <%= user.username %></h2>
+    <form class="form" action="/users/<%= user.id %>?_method=patch" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <input type="text" placeholder="username" name="username" value="<%= user.username %>"><br>
+
+        <input type="password" placeholder="password" name="password" value="<%= user.password %>"><br>
+        
+        <input type="text" placeholder="city" name="city" value="<%= user.city %>"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

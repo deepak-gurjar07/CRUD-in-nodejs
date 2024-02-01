@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User|New</title>
+    <link rel="stylesheet" href="css/new.css">
+    <style>
+        body{
+            background-color: steelblue;
+        }
+        form{
+            position: relative;
+            top: 100px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        input{
+            margin: 5px;
+            height: 30px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        button{
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: slateblue;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" action="/users" method="post">
+        <input type="text" placeholder="username" name="username"><br>
+        <input type="password" placeholder="password" name="password"><br>
+        <input type="text" placeholder="city" name="city"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

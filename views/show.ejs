@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show</title>
+  </head>
+  <body>
+    <div class="box">
+      <h2><%= user.username %></h2>
+      <h3><%= user.password %></h3>
+      <h3><%= user.city %></h3>
+      <form
+        id="deleteForm"
+        action="/users/<%= user.id%>?_method=delete"
+        method="post"
+      >
+        <input type="hidden" name="_method" value="delete" />
+        <button type="submit" onclick="confirmDelete()">Delete User</button>
+      </form>
+    </div>
+
+    <script>
+      function confirmDelete() {
+        if (confirm("Are You Sure You Want To Delete this User?")) {
+          document.getElementById("deleteForm").submit();
+        }
+      }
+    </script>
+  </body>
+</html>
